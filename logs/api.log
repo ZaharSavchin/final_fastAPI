@@ -1,0 +1,34 @@
+INFO    2023-04-13 09:58:15,909 Run initialization
+ERROR   2023-04-13 09:58:15,910 An error during db initialization string indices must be integers, not 'str'
+INFO    2023-04-13 09:59:48,216 Run initialization
+INFO    2023-04-13 10:07:48,495 Run initialization
+INFO    2023-04-13 10:08:40,502 Run initialization
+INFO    2023-04-13 10:10:11,432 Run initialization
+INFO    2023-04-13 10:13:22,412 Run initialization
+INFO    2023-04-13 10:13:55,588 Run initialization
+INFO    2023-04-13 10:15:35,884 Run initialization
+INFO    2023-04-13 10:25:23,160 Run initialization
+INFO    2023-04-13 11:10:01,530 Run initialization
+INFO    2023-04-13 11:11:37,990 Run initialization
+INFO    2023-04-13 11:14:23,623 Run initialization
+INFO    2023-04-13 11:16:08,864 Run initialization
+INFO    2023-04-13 11:17:27,700 Run initialization
+INFO    2023-04-13 11:37:19,639 Run initialization
+INFO    2023-04-13 11:37:19,775 Created author <app.models.back_call.BackCall object at 0x000002650AA44410>
+INFO    2023-04-13 11:37:19,788 Created author <app.models.note.Note object at 0x000002650AA44410>
+INFO    2023-04-13 11:37:19,792 Created author <app.models.note.Note object at 0x000002650AA9A910>
+INFO    2023-04-13 11:39:02,170 Get note моё хобби, мое любимое занятие - откачивать мед!
+INFO    2023-04-13 11:39:09,295 Get note как я стал пчеловодом, Меня научил дед. И я читал много книг по пчеловодству
+INFO    2023-04-13 12:04:22,759 Get back_call +375 29 865 45 62, Мартин. Хочу купить 2 улья с доставкой в Минск
+INFO    2023-04-15 22:49:20,617 Get note как я стал пчеловодом, Меня научил дед. И я читал много книг по пчеловодству
+INFO    2023-04-15 22:49:23,486 Get note как я стал пчеловодом, Меня научил дед. И я читал много книг по пчеловодству
+INFO    2023-04-15 22:49:52,900 Get back_call +375 29 865 45 62, Мартин. Хочу купить 2 улья с доставкой в Минск
+INFO    2023-04-15 22:49:54,579 Get back_call +375 29 865 45 62, Мартин. Хочу купить 2 улья с доставкой в Минск
+INFO    2023-04-15 23:08:34,634 Created note <app.models.note.Note object at 0x000001B430223C90>
+INFO    2023-04-15 23:23:15,671 Created note <app.models.back_call.BackCall object at 0x000001F029077F10>
+INFO    2023-04-15 23:45:11,828 Updated note <app.models.note.Note object at 0x000001B44DC94F10>
+INFO    2023-04-15 23:47:20,314 Updated note <app.models.note.Note object at 0x000001B44DCBC4D0>
+INFO    2023-04-15 23:47:22,501 Updated note <app.models.note.Note object at 0x000001B44DCA1D90>
+INFO    2023-04-15 23:48:18,169 Deleted note with id=1
+ERROR   2023-04-15 23:48:19,673 Note does't with id=1 exist
+ERROR   2023-04-15 23:48:22,392 Note does't with id=1 exist
