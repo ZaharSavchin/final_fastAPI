@@ -7,10 +7,14 @@
 {% block body %}
 <div class="container mt-5">
     <h1>Моя заметка</h1>
-    <form method="post">
-        <input type="text" name="title" id="title" class="form-control" placeholder="введите название Вашей заметки"><br>
-        <textarea name="text" id="text" class="form-control" placeholder="введите текст"></textarea><br>
+          <form action="/create_new_article" method="post">
+        <label for="title">название</label>
+        <input name="title" class="form-control" placeholder="Введите название Вашей заметки" required><br>
+
+        <label for="text">Текст</label>
+        <input name="text" class="form-control" placeholder="Введите текст вашей заметки" required><br>
+
         <input type="submit" class="btn btn-success" value="Отправить">
-    </form>
+      </form>
 </div>
 {% endblock %}

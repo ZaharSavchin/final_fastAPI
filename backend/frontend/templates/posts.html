@@ -12,8 +12,8 @@
     {% for el in article %}
     <div class="alert alert-info">
         <h2>{{ el.title }}</h2>
-        <p>{{ el.intro }}</p>
-        <p><b>Дата: {{ el.date.date() }}</b></p>
+        <p>{{ el.text[:10] }}{% if el.text|length > 10 %}...{% endif %}</p>
+        <p><b>Дата: {{ el.create_at }}</b></p>
         <a href="/posts/{{ el.id }}" class="btn btn-warning">Читать полностью</a>
     </div>
     {% endfor %}

@@ -1,15 +1,20 @@
 # templates.TemplateResponse
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from fastapi import Request
 from fastapi.staticfiles import StaticFiles
+
 
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from app.crud.note import get_notes_list, get_note_by_id
+from sqlalchemy.orm import Session
+from app.db.session import get_db
 
 templates = Jinja2Templates(directory="frontend/templates")
 pages_router = APIRouter()
 pages_router.mount("/static", StaticFiles(directory="frontend/static"), name="static")
+
 
 
 @pages_router.get("/", response_class=HTMLResponse)
@@ -72,6 +77,12 @@ async def price_bee_trap(request: Request):
     return templates.TemplateResponse("price_bee_trap.html", {"request": request})
 
 
-@pages_router.get("/price_bee_trap", response_class=HTMLResponse)
-async def price_bee_trap(request: Request):
-    return templates.TemplateResponse("price_bee_trap.html", {"request": request})
+
+
+# @app.route('/posts/<int:id>')
+# def post_detail(id):
+#     article_detail = Article.query.get(id)
+#     return render_template('post_detail.html', article_detail=article_detail)
+
+
+
