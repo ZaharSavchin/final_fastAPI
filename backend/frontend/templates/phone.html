@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+форма обратной связи
+{% endblock %}
+
+
+{% block body %}
+ <div class="container mt-5">
+      <h2>Оставте свой номер телефона и мы Вам перезвоним</h2>
+      <form action="/new_back_call" method="post">
+        <label for="contacts">Ваши контакты:</label>
+        <input name="contacts" class="form-control" placeholder="Введите Ваше имя" required><br>
+
+        <label for="message">Ваше сообщение:</label>
+        <input name="message" class="form-control" placeholder="Введите Ваш номер телефона" required><br>
+
+        <input type="submit" class="btn btn-success" value="Отправить">
+      </form>
+    </div>
+{% endblock %}

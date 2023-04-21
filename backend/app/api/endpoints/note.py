@@ -36,6 +36,13 @@ def create_note_endpoint(note: NoteCreate, db: Session = Depends(get_db)) -> Not
     return created_note
 
 
+# @note_router.post("/new_back_call", response_class=HTMLResponse)
+# async def create_back_call_endpoint(request: Request, contacts: str = Form(...), message: str = Form(...), db: Session = Depends(get_db)):
+#     back_call = BackCallCreate(contacts=contacts, message=message)
+#     create_back_call(db=db, back_call=back_call)
+#     return templates.TemplateResponse("phone_success.html", {"request": request})
+
+
 @note_router.put('/update_note/{note_id}', response_model=NoteModel)
 def update_note_endpoint(note_id: int, note: NoteUpdate, db: Session = Depends(get_db)) -> Note:
     if db_note := get_note_by_id(db, note_id):

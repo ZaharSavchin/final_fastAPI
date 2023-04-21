@@ -1,15 +1,18 @@
 import logging
 from typing import List
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Request, Form
 from sqlalchemy.orm import Session
 from app.db.session import get_db
+from fastapi.templating import Jinja2Templates
+from fastapi.responses import HTMLResponse
 
 from app.schemas.back_call import BackCallModel
 from app.models.back_call import BackCall, BackCallCreate
 from app.crud.back_call import get_back_call_by_id, get_back_call_list, create_back_call
 
 
+templates = Jinja2Templates(directory="frontend/templates")
 back_call_router = APIRouter()
 logger = logging.getLogger('final_fastAPI')
 
@@ -29,8 +32,19 @@ async def get_notes(db: Session = Depends(get_db)):
     return get_back_call_list(db)
 
 
-@back_call_router.post('/new_back_call', response_model=BackCallModel)
-def create_back_call_endpoint(note: BackCallCreate, db: Session = Depends(get_db)) -> BackCall:
-    back_call = create_back_call(db, note)
-    logger.info(msg=f"Created note {back_call}")
-    return back_call
+@back_call_router.get('/back_call', response_class=HTMLResponse)
+def create_back_call_endpoint(request: Request):
+    return templates.TemplateResponse("phone.html", {"request": request})
+
+
+# @back_call_router.post("/new_back_call")
+# async def create_back_call_endpoint(contacts: str = Form(...), message: str = Form(...), db: Session = Depends(get_db)):
+#     back_call = BackCallCreate(contacts=contacts, message=message)
+#     return create_back_call(db=db, back_call=back_call)
+
+
+@back_call_router.post("/new_back_call", response_class=HTMLResponse)
+async def create_back_call_endpoint(request: Request, contacts: str = Form(...), message: str = Form(...), db: Session = Depends(get_db)):
+    back_call = BackCallCreate(contacts=contacts, message=message)
+    create_back_call(db=db, back_call=back_call)
+    return templates.TemplateResponse("phone_success.html", {"request": request})
